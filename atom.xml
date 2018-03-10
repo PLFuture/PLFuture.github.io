@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>网站标题</title>
+  
+  <subtitle>网站副标题</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-03-10T16:39:53.076Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>筱鹏__</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>title</title>
+    <link href="http://yoursite.com/2018/03/10/title/"/>
+    <id>http://yoursite.com/2018/03/10/title/</id>
+    <published>2018-03-10T09:20:38.000Z</published>
+    <updated>2018-03-10T16:39:53.076Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;第一篇博客&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="标签1" scheme="http://yoursite.com/tags/%E6%A0%87%E7%AD%BE1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2018/03/10/hello-world/"/>
+    <id>http://yoursite.com/2018/03/10/hello-world/</id>
+    <published>2018-03-10T09:15:13.624Z</published>
+    <updated>2018-03-10T09:15:13.624Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
