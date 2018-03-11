@@ -1544,6 +1544,7 @@ pre .javascript .function {
 .post-button {
   margin-top: 40px;
   background: transparent;
+  text-align: center;
 }
 .posts-expand .post-tags {
   margin-top: 40px;
@@ -1824,7 +1825,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a4bfd0;
+  background: #ed9a2f;
 }
 .links-of-blogroll {
   font-size: 13px;
