@@ -1,6 +1,6 @@
 ---
-title: 分类
-date: 2018-03-11 00:30:17
-categories: Testing #分类名
-type: "categories"
+title: categories
+date: 2018-03-13 22:31:11
+type: 'tags'
+comments: false
 ---
