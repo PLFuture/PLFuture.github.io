@@ -47,7 +47,7 @@ image: http://p5rw76jyj.bkt.clouddn.com/untitled-9-title.png
 
 > ## Video
 
-{% dplayer "url=https://yixiuer.oss-cn-shanghai.aliyuncs.com/Video/404bg.mp4" "screenshot=screenshot"  "loop=false"  "hotkey=hotkey" %}
+{% dplayer "url=https://yixiuer.oss-cn-shanghai.aliyuncs.com/Video/404bg.mp4" "screenshot=screenshot"  "loop=false"  "hotkey=hotkey"  "preload=preload" %}
 
 > ## Emoji
 
