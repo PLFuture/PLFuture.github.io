@@ -5,9 +5,9 @@
   <subtitle>Stay hungry, Stay foolish.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://wplll.com/"/>
+  <link href="https://wplll.com/"/>
   <updated>2019-03-21T09:29:22.201Z</updated>
-  <id>http://wplll.com/</id>
+  <id>https://wplll.com/</id>
   
   <author>
     <name>筱鹏__</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Next个性化配置之归档页添加动画</title>
-    <link href="http://wplll.com/2019/03/19/addArchivesAnimate/"/>
-    <id>http://wplll.com/2019/03/19/addArchivesAnimate/</id>
+    <link href="https://wplll.com/2019/03/19/addArchivesAnimate/"/>
+    <id>https://wplll.com/2019/03/19/addArchivesAnimate/</id>
     <published>2019-03-19T08:59:49.000Z</published>
     <updated>2019-03-21T09:29:22.201Z</updated>
     
@@ -31,33 +31,33 @@
     
     </summary>
     
-      <category term="computer" scheme="http://wplll.com/categories/computer/"/>
+      <category term="computer" scheme="https://wplll.com/categories/computer/"/>
     
-      <category term="hexo" scheme="http://wplll.com/categories/computer/hexo/"/>
+      <category term="hexo" scheme="https://wplll.com/categories/computer/hexo/"/>
     
-      <category term="next" scheme="http://wplll.com/categories/computer/hexo/next/"/>
+      <category term="next" scheme="https://wplll.com/categories/computer/hexo/next/"/>
     
     
-      <category term="Hexo" scheme="http://wplll.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://wplll.com/tags/Hexo/"/>
     
-      <category term="Next" scheme="http://wplll.com/tags/Next/"/>
+      <category term="Next" scheme="https://wplll.com/tags/Next/"/>
     
-      <category term="Motion" scheme="http://wplll.com/tags/Motion/"/>
+      <category term="Motion" scheme="https://wplll.com/tags/Motion/"/>
     
-      <category term="动画" scheme="http://wplll.com/tags/%E5%8A%A8%E7%94%BB/"/>
+      <category term="动画" scheme="https://wplll.com/tags/%E5%8A%A8%E7%94%BB/"/>
     
-      <category term="博客" scheme="http://wplll.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://wplll.com/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>ShareMV</title>
-    <link href="http://wplll.com/2019/02/05/ShareMV/"/>
-    <id>http://wplll.com/2019/02/05/ShareMV/</id>
+    <link href="https://wplll.com/2019/02/05/ShareMV/"/>
+    <id>https://wplll.com/2019/02/05/ShareMV/</id>
     <published>2019-02-05T15:13:50.000Z</published>
     <updated>2019-03-13T01:21:41.000Z</updated>
     
-    <content type="html"><![CDATA[<p class="description">分享mv</p><p><img src="https://" alt style="width:100%"></p><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"preload":"preload","video":{"url":"https://qiniu.wplll.com/Counting%20Sheep.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>]]></content>
+    <content type="html"><![CDATA[<p class="description">分享mv</p><p><img src="https://" alt style="width:100%"></p><div id="dplayer1" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer1"),"preload":"preload","video":{"url":"https://qiniu.wplll.com/Counting%20Sheep.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>]]></content>
     
     <summary type="html">
     
@@ -66,7 +66,7 @@
         &lt;p class=&quot;description&quot;&gt;分享mv&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://&quot; alt style=&quot;width:100%&quot;&gt;&lt;/p&gt;
-&lt;div id=&quot;dplayer0&quot; class=&quot;dplayer hexo-tag-dplayer-mark&quot;
+&lt;div id=&quot;dplayer1&quot; class=&quot;dplayer hexo-tag-dplayer-mark&quot;
       
     
     </summary>
@@ -76,12 +76,12 @@
   
   <entry>
     <title>Music And Video</title>
-    <link href="http://wplll.com/2018/03/18/Music-And-Video/"/>
-    <id>http://wplll.com/2018/03/18/Music-And-Video/</id>
+    <link href="https://wplll.com/2018/03/18/Music-And-Video/"/>
+    <id>https://wplll.com/2018/03/18/Music-And-Video/</id>
     <published>2018-03-18T06:42:05.000Z</published>
     <updated>2019-03-21T08:53:00.994Z</updated>
     
-    <content type="html"><![CDATA[<p class="description">愿有岁月可回首，且以深情共白头</p><a id="more"></a><blockquote><h2 id="Music"><a href="#Music" class="headerlink" title="Music"></a>Music</h2></blockquote>        <div id="aplayer-qvtHmVGw" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-qvtHmVGw"),            narrow: false,            autoplay: false,            showlrc: 3,            music: {              title: "Lifted",              author: "Allie X",              url: "https://qiniu.wplll.com/Allie%20X%20-%20Lifted.mp3",              pic: "https://p1.music.126.net/EZC0ed-gwIuWAzUTOb8sIQ==/19140298416382259.jpg",              lrc: "https://qiniu.wplll.com/Allie%20X%20-%20Lifted.lrc"            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><blockquote><h2 id="PlayList"><a href="#PlayList" class="headerlink" title="PlayList"></a>PlayList</h2></blockquote>        <div id="aplayer-tTwnfgTw" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>  <script>  var options = {"narrow":false,"autoplay":false,"showlrc":3,"mutex":true,"music":[{"title":"Lifted","author":"Allie X","url":"https://qiniu.wplll.com/Allie%20X%20-%20Lifted.mp3","pic":"https://p1.music.126.net/EZC0ed-gwIuWAzUTOb8sIQ==/19140298416382259.jpg","lrc":"https://qiniu.wplll.com/Allie%20X%20-%20Lifted.lrc"},{"title":"River","author":"Charlie Puth","url":"https://qiniu.wplll.com/Charlie%20Puth%20-%20River.mp3","pic":"https://p1.music.126.net/1mYNu20kFlCtj1YstuSvvw==/18531168976254862.jpg","lrc":"https://qiniu.wplll.com/Charlie%20Puth%20-%20River.lrc"}]};  options.element = document.getElementById("aplayer-tTwnfgTw");  var ap = new APlayer(options);    window.aplayers || (window.aplayers = []);  window.aplayers.push(ap);  </script><blockquote><h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2></blockquote><div id="dplayer1" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer1"),"preload":"preload","video":{"url":"https://qiniu.wplll.com/Counting%20Sheep.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script><blockquote><h2 id="Emoji"><a href="#Emoji" class="headerlink" title="Emoji"></a>Emoji</h2></blockquote><p>🙂 </p><p>taeafdafas <img class="github-emoji" title="smile" alt="smile" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" height="20" width="20"> 测试测试 <img class="github-emoji" title="satisfied" alt="satisfied" src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" height="20" width="20">  <img class="github-emoji" title="stuck_out_tongue_closed_eyes" alt="stuck_out_tongue_closed_eyes" src="https://github.githubassets.com/images/icons/emoji/unicode/1f61d.png?v8" height="20" width="20"> 🙂 <img class="github-emoji" title="stuck_out_tongue_closed_eyes" alt="stuck_out_tongue_closed_eyes" src="https://github.githubassets.com/images/icons/emoji/unicode/1f61d.png?v8" height="20" width="20"> <img class="github-emoji" title="grinning" alt="grinning" src="https://github.githubassets.com/images/icons/emoji/unicode/1f600.png?v8" height="20" width="20"> <img id="github-emoji" src="https://qiniu.wplll.com/%E8%A1%A8%E6%83%85.gif" height="30" width="30"></p><p><img src="https://" alt style="width:100%"></p><blockquote><h2 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h2></blockquote><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">photo_alt</span>](<span class="link">photo_url "photo_title"</span>)</span><br><span class="line">​</span><br></pre></td></tr></table></figure><p><img src="https://qiniu.wplll.com/blogImg.png" alt="image" title="FirstImg"></p><hr>]]></content>
+    <content type="html"><![CDATA[<p class="description">愿有岁月可回首，且以深情共白头</p><a id="more"></a><blockquote><h2 id="Music"><a href="#Music" class="headerlink" title="Music"></a>Music</h2></blockquote>        <div id="aplayer-pUSAOLrn" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-pUSAOLrn"),            narrow: false,            autoplay: false,            showlrc: 3,            music: {              title: "Lifted",              author: "Allie X",              url: "https://qiniu.wplll.com/Allie%20X%20-%20Lifted.mp3",              pic: "https://p1.music.126.net/EZC0ed-gwIuWAzUTOb8sIQ==/19140298416382259.jpg",              lrc: "https://qiniu.wplll.com/Allie%20X%20-%20Lifted.lrc"            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><blockquote><h2 id="PlayList"><a href="#PlayList" class="headerlink" title="PlayList"></a>PlayList</h2></blockquote>        <div id="aplayer-fvmLVUGh" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>  <script>  var options = {"narrow":false,"autoplay":false,"showlrc":3,"mutex":true,"music":[{"title":"Lifted","author":"Allie X","url":"https://qiniu.wplll.com/Allie%20X%20-%20Lifted.mp3","pic":"https://p1.music.126.net/EZC0ed-gwIuWAzUTOb8sIQ==/19140298416382259.jpg","lrc":"https://qiniu.wplll.com/Allie%20X%20-%20Lifted.lrc"},{"title":"River","author":"Charlie Puth","url":"https://qiniu.wplll.com/Charlie%20Puth%20-%20River.mp3","pic":"https://p1.music.126.net/1mYNu20kFlCtj1YstuSvvw==/18531168976254862.jpg","lrc":"https://qiniu.wplll.com/Charlie%20Puth%20-%20River.lrc"}]};  options.element = document.getElementById("aplayer-fvmLVUGh");  var ap = new APlayer(options);    window.aplayers || (window.aplayers = []);  window.aplayers.push(ap);  </script><blockquote><h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2></blockquote><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"preload":"preload","video":{"url":"https://qiniu.wplll.com/Counting%20Sheep.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script><blockquote><h2 id="Emoji"><a href="#Emoji" class="headerlink" title="Emoji"></a>Emoji</h2></blockquote><p>🙂 </p><p>taeafdafas <img class="github-emoji" title="smile" alt="smile" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" height="20" width="20"> 测试测试 <img class="github-emoji" title="satisfied" alt="satisfied" src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" height="20" width="20">  <img class="github-emoji" title="stuck_out_tongue_closed_eyes" alt="stuck_out_tongue_closed_eyes" src="https://github.githubassets.com/images/icons/emoji/unicode/1f61d.png?v8" height="20" width="20"> 🙂 <img class="github-emoji" title="stuck_out_tongue_closed_eyes" alt="stuck_out_tongue_closed_eyes" src="https://github.githubassets.com/images/icons/emoji/unicode/1f61d.png?v8" height="20" width="20"> <img class="github-emoji" title="grinning" alt="grinning" src="https://github.githubassets.com/images/icons/emoji/unicode/1f600.png?v8" height="20" width="20"> <img id="github-emoji" src="https://qiniu.wplll.com/%E8%A1%A8%E6%83%85.gif" height="30" width="30"></p><p><img src="https://" alt style="width:100%"></p><blockquote><h2 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h2></blockquote><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">photo_alt</span>](<span class="link">photo_url "photo_title"</span>)</span><br><span class="line">​</span><br></pre></td></tr></table></figure><p><img src="https://qiniu.wplll.com/blogImg.png" alt="image" title="FirstImg"></p><hr>]]></content>
     
     <summary type="html">
     
@@ -89,19 +89,19 @@
     
     </summary>
     
-      <category term="Music" scheme="http://wplll.com/categories/Music/"/>
+      <category term="Music" scheme="https://wplll.com/categories/Music/"/>
     
     
-      <category term="Music" scheme="http://wplll.com/tags/Music/"/>
+      <category term="Music" scheme="https://wplll.com/tags/Music/"/>
     
-      <category term="Video" scheme="http://wplll.com/tags/Video/"/>
+      <category term="Video" scheme="https://wplll.com/tags/Video/"/>
     
   </entry>
   
   <entry>
     <title>数组排序</title>
-    <link href="http://wplll.com/2018/03/14/SortArray/"/>
-    <id>http://wplll.com/2018/03/14/SortArray/</id>
+    <link href="https://wplll.com/2018/03/14/SortArray/"/>
+    <id>https://wplll.com/2018/03/14/SortArray/</id>
     <published>2018-03-13T17:02:28.000Z</published>
     <updated>2019-03-13T02:37:26.000Z</updated>
     
@@ -114,21 +114,21 @@
     
     </summary>
     
-      <category term="技术" scheme="http://wplll.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://wplll.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="JS" scheme="http://wplll.com/tags/JS/"/>
+      <category term="JS" scheme="https://wplll.com/tags/JS/"/>
     
-      <category term="技术" scheme="http://wplll.com/tags/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://wplll.com/tags/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="数组" scheme="http://wplll.com/tags/%E6%95%B0%E7%BB%84/"/>
+      <category term="数组" scheme="https://wplll.com/tags/%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>JS变量对象</title>
-    <link href="http://wplll.com/2017/12/21/VariableObject/"/>
-    <id>http://wplll.com/2017/12/21/VariableObject/</id>
+    <link href="https://wplll.com/2017/12/21/VariableObject/"/>
+    <id>https://wplll.com/2017/12/21/VariableObject/</id>
     <published>2017-12-21T13:18:51.000Z</published>
     <updated>2019-03-13T01:19:26.000Z</updated>
     
@@ -147,8 +147,8 @@
   
   <entry>
     <title>VUE路由传参</title>
-    <link href="http://wplll.com/2017/09/20/VueParamsTransmit/"/>
-    <id>http://wplll.com/2017/09/20/VueParamsTransmit/</id>
+    <link href="https://wplll.com/2017/09/20/VueParamsTransmit/"/>
+    <id>https://wplll.com/2017/09/20/VueParamsTransmit/</id>
     <published>2017-09-20T14:35:57.000Z</published>
     <updated>2019-03-13T08:09:57.000Z</updated>
     
@@ -162,25 +162,25 @@
     
     </summary>
     
-      <category term="technology" scheme="http://wplll.com/categories/technology/"/>
+      <category term="technology" scheme="https://wplll.com/categories/technology/"/>
     
-      <category term="computer" scheme="http://wplll.com/categories/technology/computer/"/>
+      <category term="computer" scheme="https://wplll.com/categories/technology/computer/"/>
     
-      <category term="computer-aided-art" scheme="http://wplll.com/categories/technology/computer/computer-aided-art/"/>
+      <category term="computer-aided-art" scheme="https://wplll.com/categories/technology/computer/computer-aided-art/"/>
     
     
-      <category term="Vue" scheme="http://wplll.com/tags/Vue/"/>
+      <category term="Vue" scheme="https://wplll.com/tags/Vue/"/>
     
-      <category term="路由" scheme="http://wplll.com/tags/%E8%B7%AF%E7%94%B1/"/>
+      <category term="路由" scheme="https://wplll.com/tags/%E8%B7%AF%E7%94%B1/"/>
     
-      <category term="传参" scheme="http://wplll.com/tags/%E4%BC%A0%E5%8F%82/"/>
+      <category term="传参" scheme="https://wplll.com/tags/%E4%BC%A0%E5%8F%82/"/>
     
   </entry>
   
   <entry>
     <title>《JavaScript 高级程序设计》学习笔记（一）</title>
-    <link href="http://wplll.com/2017/03/20/JavaScriptBasicNotes/"/>
-    <id>http://wplll.com/2017/03/20/JavaScriptBasicNotes/</id>
+    <link href="https://wplll.com/2017/03/20/JavaScriptBasicNotes/"/>
+    <id>https://wplll.com/2017/03/20/JavaScriptBasicNotes/</id>
     <published>2017-03-20T14:35:57.000Z</published>
     <updated>2019-03-13T01:11:43.000Z</updated>
     
@@ -193,14 +193,14 @@
     
     </summary>
     
-      <category term="技术" scheme="http://wplll.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://wplll.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="传参" scheme="http://wplll.com/tags/%E4%BC%A0%E5%8F%82/"/>
+      <category term="传参" scheme="https://wplll.com/tags/%E4%BC%A0%E5%8F%82/"/>
     
-      <category term="JavaScript" scheme="http://wplll.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://wplll.com/tags/JavaScript/"/>
     
-      <category term="基础" scheme="http://wplll.com/tags/%E5%9F%BA%E7%A1%80/"/>
+      <category term="基础" scheme="https://wplll.com/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
