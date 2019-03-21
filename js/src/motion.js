@@ -316,6 +316,8 @@ $(document).ready(function() {
       var $postHeaderTransition = CONFIG.motion.transition.post_header;
       var $postBody = $('.post-body');
       var $postBodyTransition = CONFIG.motion.transition.post_body;
+      var $postTypeNormal = $('.post-type-normal');
+      var $$postTypeNormalTransition = CONFIG.motion.transition.post_type;
       var $collHeader = $('.collection-title, .archive-year');
       var $collHeaderTransition = CONFIG.motion.transition.coll_header;
       var $sidebarAffix = $('.sidebar-inner');
@@ -344,6 +346,9 @@ $(document).ready(function() {
         }
         if (CONFIG.motion.transition.post_body) {
           $postBody.velocity('transition.' + $postBodyTransition, postMotionOptions);
+        }
+        if (CONFIG.motion.transition.post_type) {
+          $postTypeNormal.velocity('transition.' + $$postTypeNormalTransition, postMotionOptions);
         }
         if (CONFIG.motion.transition.coll_header) {
           $collHeader.velocity('transition.' + $collHeaderTransition, postMotionOptions);
