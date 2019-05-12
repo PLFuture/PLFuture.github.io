@@ -26,7 +26,7 @@ var app = new Vue({
 				<div class="wrapper">
 					<div class="sentence-wrapper">
 						<div class="sentence" v-if="item.sentence">{{item.sentence}}</div>
-						<div class="sentence" v-if="item.poem" v-for="nasp in poemArr[index]">
+						<div class="sentence" v-if="item.poem" v-for="(nasp,naspIndex) in poemArr[index]" :key="naspIndex">
 							<span class="poemSentence">{{nasp}}</span>
 							<br>
 						</div>
