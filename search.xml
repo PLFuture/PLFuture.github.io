@@ -38,7 +38,7 @@
   <entry>
     <title><![CDATA[Music And Video]]></title>
     <url>%2F2018%2F03%2F18%2FMusic-And-Video%2F</url>
-    <content type="text"><![CDATA[愿有岁月可回首，且以深情共白头 Music var ap = new APlayer({ element: document.getElementById("aplayer-ahyFnjik"), narrow: false, autoplay: false, showlrc: 3, music: { title: "Lifted", author: "Allie X", url: "https://qiniu.wplll.com/Allie%20X%20-%20Lifted.mp3", pic: "https://p1.music.126.net/EZC0ed-gwIuWAzUTOb8sIQ==/19140298416382259.jpg", lrc: "https://qiniu.wplll.com/Allie%20X%20-%20Lifted.lrc" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); PlayList var options = {"narrow":false,"autoplay":false,"showlrc":3,"mutex":true,"music":[{"title":"Lifted","author":"Allie X","url":"https://qiniu.wplll.com/Allie%20X%20-%20Lifted.mp3","pic":"https://p1.music.126.net/EZC0ed-gwIuWAzUTOb8sIQ==/19140298416382259.jpg","lrc":"https://qiniu.wplll.com/Allie%20X%20-%20Lifted.lrc"},{"title":"River","author":"Charlie Puth","url":"https://qiniu.wplll.com/Charlie%20Puth%20-%20River.mp3","pic":"https://p1.music.126.net/1mYNu20kFlCtj1YstuSvvw==/18531168976254862.jpg","lrc":"https://qiniu.wplll.com/Charlie%20Puth%20-%20River.lrc"}]}; options.element = document.getElementById("aplayer-ZHgOTmjB"); var ap = new APlayer(options); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); Video (function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"preload":"preload","video":{"url":"https://qiniu.wplll.com/Counting%20Sheep.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})() Emoji 🙂 taeafdafas 测试测试 🙂 Image 12![photo_alt](photo_url "photo_title")​]]></content>
+    <content type="text"><![CDATA[愿有岁月可回首，且以深情共白头 Music var ap = new APlayer({ element: document.getElementById("aplayer-ZnQXuLUE"), narrow: false, autoplay: false, showlrc: 3, music: { title: "Lifted", author: "Allie X", url: "https://qiniu.wplll.com/Allie%20X%20-%20Lifted.mp3", pic: "https://p1.music.126.net/EZC0ed-gwIuWAzUTOb8sIQ==/19140298416382259.jpg", lrc: "https://qiniu.wplll.com/Allie%20X%20-%20Lifted.lrc" } }); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); PlayList var options = {"narrow":false,"autoplay":false,"showlrc":3,"mutex":true,"music":[{"title":"Lifted","author":"Allie X","url":"https://qiniu.wplll.com/Allie%20X%20-%20Lifted.mp3","pic":"https://p1.music.126.net/EZC0ed-gwIuWAzUTOb8sIQ==/19140298416382259.jpg","lrc":"https://qiniu.wplll.com/Allie%20X%20-%20Lifted.lrc"},{"title":"River","author":"Charlie Puth","url":"https://qiniu.wplll.com/Charlie%20Puth%20-%20River.mp3","pic":"https://p1.music.126.net/1mYNu20kFlCtj1YstuSvvw==/18531168976254862.jpg","lrc":"https://qiniu.wplll.com/Charlie%20Puth%20-%20River.lrc"}]}; options.element = document.getElementById("aplayer-QWzYvCyi"); var ap = new APlayer(options); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); Video (function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"preload":"preload","video":{"url":"https://qiniu.wplll.com/Counting%20Sheep.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})() Emoji 🙂 taeafdafas 测试测试 🙂 Image 12![photo_alt](photo_url "photo_title")​]]></content>
       <categories>
         <category>Music</category>
       </categories>
@@ -85,6 +85,21 @@
         <tag>Vue</tag>
         <tag>路由</tag>
         <tag>传参</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JS字符串数组常用方法总结]]></title>
+    <url>%2F2017%2F06%2F03%2FStringAndArrMethods%2F</url>
+    <content type="text"><![CDATA[Array 常用操作方法 目的 方法 返回值类型 查询给定元素的下标 Array.indexOf() int 查询当前数组中是否包含给定元素 Array.includes() boolean 过滤数组 Array.filter() 符合过滤条件的所有元素 若确定当前数组经过滤后只有一项 Array.find() 符合过滤条件的第一个元素 若需确定当前数组中是否有符合过滤条件的元素 Array.some() boolean 若需过滤当前数组并需对得到的数组进行 map 操作 Array.reduce() - 删除当前数组指定下标元素或从指定下标开始添加元素或替换指定下标元素 Array.splice(start,end,replaceCon) 被截取的元素组成的数组 将类数组元素转为数组元素，首层深拷贝数组 Array.slice() array String 常用操作方法 目的 方法 返回值类型 转字符串 Str.toString()，String(Str)，Str + &#39;&#39; string 字符串分割 Str.split(&#39;&#39;,maxLen) 第二个参数代表返回数组最大长度 array 字符串替换 Str.replace(reg,replaceCon) 第一个参数为正则，默认替换第一个匹配到内容，全局替换则需在正则加全局表示 g string 查找字符串 Str.indexOf(val)(正序搜)，Str.lastIndexOf(val)(倒序搜) int 查找指定位置字符或编码 Str.charAt(index)，Str.charCodeAt(index) string,编码值 大小写转换 Str.toLowerCase()，Str.toUpperCase() string slice Str.slice(startIdx,endIdx)，参数可为负数，若为负数，则倒序截取。endIdx 可选，若不填，默认截取 startIdx到字符串末尾的值 string subStr Str.subStr(startIdx,len)，len 可选，若不填，默认截取 startIdx到字符串末尾的值 string substring Str.substring(startIdx,endIdx)，参数必须为正数，与 slice 用法一致 string 判断数据类型常用的判断数据类型的方法为Object.prototype.toString.call()，返回结果为[object &#39;数据类型&#39;]]]></content>
+      <categories>
+        <category>technology</category>
+        <category>Summary</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>String</tag>
+        <tag>Array</tag>
+        <tag>Methods</tag>
       </tags>
   </entry>
   <entry>
