@@ -645,7 +645,7 @@
 
     formatComponentName = function (vm, includeFile) {
       if (vm.$root === vm) {
-        return '<Root>'
+        return '<root>'
       }
       var options = typeof vm === 'function' && vm.cid != null
         ? vm.options
@@ -660,7 +660,7 @@
       }
 
       return (
-        (name ? ("<" + (classify(name)) + ">") : "<Anonymous>") +
+        (name ? ("<" + (classify(name)) ">") : "<anonymous>") +
         (file && includeFile !== false ? (" at " + file) : '')
       )
     };
@@ -2339,7 +2339,7 @@
   // statically analyzing the template at compile time.
   //
   // For plain HTML markup, normalization can be completely skipped because the
-  // generated render function is guaranteed to return Array<VNode>. There are
+  // generated render function is guaranteed to return Array<vnode>. There are
   // two cases where extra normalization is needed:
 
   // 1. When the children contains components - because a functional component
@@ -5796,103 +5796,7 @@
   function createKeyToOldIdx (children, beginIdx, endIdx) {
     var i, key;
     var map = {};
-    for (i = beginIdx; i <= endIdx; ++i) {
-      key = children[i].key;
-      if (isDef(key)) { map[key] = i; }
-    }
-    return map
-  }
-
-  function createPatchFunction (backend) {
-    var i, j;
-    var cbs = {};
-
-    var modules = backend.modules;
-    var nodeOps = backend.nodeOps;
-
-    for (i = 0; i < hooks.length; ++i) {
-      cbs[hooks[i]] = [];
-      for (j = 0; j < modules.length; ++j) {
-        if (isDef(modules[j][hooks[i]])) {
-          cbs[hooks[i]].push(modules[j][hooks[i]]);
-        }
-      }
-    }
-
-    function emptyNodeAt (elm) {
-      return new VNode(nodeOps.tagName(elm).toLowerCase(), {}, [], undefined, elm)
-    }
-
-    function createRmCb (childElm, listeners) {
-      function remove$$1 () {
-        if (--remove$$1.listeners === 0) {
-          removeNode(childElm);
-        }
-      }
-      remove$$1.listeners = listeners;
-      return remove$$1
-    }
-
-    function removeNode (el) {
-      var parent = nodeOps.parentNode(el);
-      // element may have already been removed due to v-html / v-text
-      if (isDef(parent)) {
-        nodeOps.removeChild(parent, el);
-      }
-    }
-
-    function isUnknownElement$$1 (vnode, inVPre) {
-      return (
-        !inVPre &&
-        !vnode.ns &&
-        !(
-          config.ignoredElements.length &&
-          config.ignoredElements.some(function (ignore) {
-            return isRegExp(ignore)
-              ? ignore.test(vnode.tag)
-              : ignore === vnode.tag
-          })
-        ) &&
-        config.isUnknownElement(vnode.tag)
-      )
-    }
-
-    var creatingElmInVPre = 0;
-
-    function createElm (
-      vnode,
-      insertedVnodeQueue,
-      parentElm,
-      refElm,
-      nested,
-      ownerArray,
-      index
-    ) {
-      if (isDef(vnode.elm) && isDef(ownerArray)) {
-        // This vnode was used in a previous render!
-        // now it's used as a new node, overwriting its elm would cause
-        // potential patch errors down the road when it's used as an insertion
-        // reference node. Instead, we clone the node on-demand before creating
-        // associated DOM element for it.
-        vnode = ownerArray[index] = cloneVNode(vnode);
-      }
-
-      vnode.isRootInsert = !nested; // for transition enter check
-      if (createComponent(vnode, insertedVnodeQueue, parentElm, refElm)) {
-        return
-      }
-
-      var data = vnode.data;
-      var children = vnode.children;
-      var tag = vnode.tag;
-      if (isDef(tag)) {
-        {
-          if (data && data.pre) {
-            creatingElmInVPre++;
-          }
-          if (isUnknownElement$$1(vnode, creatingElmInVPre)) {
-            warn(
-              'Unknown custom element: <' + tag + '> - did you ' +
+    for (i = beginIdx; i <= endidx; ++i) { key="children[i].key;" if (isdef(key)) map[key]="i;" } return map function createpatchfunction (backend) var i, j; cbs="{};" modules="backend.modules;" nodeops="backend.nodeOps;" for (i="0;" i < hooks.length; cbs[hooks[i]]="[];" (j="0;" j modules.length; ++j) (isdef(modules[j][hooks[i]])) cbs[hooks[i]].push(modules[j][hooks[i]]); emptynodeat (elm) new vnode(nodeops.tagname(elm).tolowercase(), {}, [], undefined, elm) creatermcb (childelm, listeners) remove$$1 () (--remove$$1.listeners="==" 0) removenode(childelm); remove$$1.listeners="listeners;" removenode (el) parent="nodeOps.parentNode(el);" element may have already been removed due to v-html v-text (isdef(parent)) nodeops.removechild(parent, el); isunknownelement$$1 (vnode, invpre) ( !invpre && !vnode.ns !( config.ignoredelements.length config.ignoredelements.some(function (ignore) isregexp(ignore) ? ignore.test(vnode.tag) : ignore="==" vnode.tag }) ) config.isunknownelement(vnode.tag) creatingelminvpre="0;" createelm vnode, insertedvnodequeue, parentelm, refelm, nested, ownerarray, index (isdef(vnode.elm) isdef(ownerarray)) this vnode was used in a previous render! now it's as node, overwriting its elm would cause potential patch errors down the road when an insertion reference node. instead, we clone node on-demand before creating associated dom it. = clonevnode(vnode); vnode.isrootinsert="!nested;" transition enter check (createcomponent(vnode, refelm)) data="vnode.data;" children="vnode.children;" tag="vnode.tag;" (isdef(tag)) (data data.pre) creatingelminvpre++; (isunknownelement$$1(vnode, creatingelminvpre)) warn( 'unknown custom element: <' + '> - did you ' +
               'register the component correctly? For recursive components, ' +
               'make sure to provide the "name" option.',
               vnode.context
@@ -6058,80 +5962,7 @@
     }
 
     function addVnodes (parentElm, refElm, vnodes, startIdx, endIdx, insertedVnodeQueue) {
-      for (; startIdx <= endIdx; ++startIdx) {
-        createElm(vnodes[startIdx], insertedVnodeQueue, parentElm, refElm, false, vnodes, startIdx);
-      }
-    }
-
-    function invokeDestroyHook (vnode) {
-      var i, j;
-      var data = vnode.data;
-      if (isDef(data)) {
-        if (isDef(i = data.hook) && isDef(i = i.destroy)) { i(vnode); }
-        for (i = 0; i < cbs.destroy.length; ++i) { cbs.destroy[i](vnode); }
-      }
-      if (isDef(i = vnode.children)) {
-        for (j = 0; j < vnode.children.length; ++j) {
-          invokeDestroyHook(vnode.children[j]);
-        }
-      }
-    }
-
-    function removeVnodes (parentElm, vnodes, startIdx, endIdx) {
-      for (; startIdx <= endIdx; ++startIdx) {
-        var ch = vnodes[startIdx];
-        if (isDef(ch)) {
-          if (isDef(ch.tag)) {
-            removeAndInvokeRemoveHook(ch);
-            invokeDestroyHook(ch);
-          } else { // Text node
-            removeNode(ch.elm);
-          }
-        }
-      }
-    }
-
-    function removeAndInvokeRemoveHook (vnode, rm) {
-      if (isDef(rm) || isDef(vnode.data)) {
-        var i;
-        var listeners = cbs.remove.length + 1;
-        if (isDef(rm)) {
-          // we have a recursively passed down rm callback
-          // increase the listeners count
-          rm.listeners += listeners;
-        } else {
-          // directly removing
-          rm = createRmCb(vnode.elm, listeners);
-        }
-        // recursively invoke hooks on child component root node
-        if (isDef(i = vnode.componentInstance) && isDef(i = i._vnode) && isDef(i.data)) {
-          removeAndInvokeRemoveHook(i, rm);
-        }
-        for (i = 0; i < cbs.remove.length; ++i) {
-          cbs.remove[i](vnode, rm);
-        }
-        if (isDef(i = vnode.data.hook) && isDef(i = i.remove)) {
-          i(vnode, rm);
-        } else {
-          rm();
-        }
-      } else {
-        removeNode(vnode.elm);
-      }
-    }
-
-    function updateChildren (parentElm, oldCh, newCh, insertedVnodeQueue, removeOnly) {
-      var oldStartIdx = 0;
-      var newStartIdx = 0;
-      var oldEndIdx = oldCh.length - 1;
-      var oldStartVnode = oldCh[0];
-      var oldEndVnode = oldCh[oldEndIdx];
-      var newEndIdx = newCh.length - 1;
-      var newStartVnode = newCh[0];
-      var newEndVnode = newCh[newEndIdx];
-      var oldKeyToIdx, idxInOld, vnodeToMove, refElm;
-
-      // removeOnly is a special flag used only by <transition-group>
+      for (; startIdx <= endidx; ++startidx) { createelm(vnodes[startidx], insertedvnodequeue, parentelm, refelm, false, vnodes, startidx); } function invokedestroyhook (vnode) var i, j; data="vnode.data;" if (isdef(data)) (isdef(i="data.hook)" && isdef(i="i.destroy))" i(vnode); for (i="0;" i < cbs.destroy.length; ++i) cbs.destroy[i](vnode); (j="0;" j vnode.children.length; ++j) invokedestroyhook(vnode.children[j]); removevnodes (parentelm, startidx, endidx) (; startidx ch="vnodes[startIdx];" (isdef(ch)) (isdef(ch.tag)) removeandinvokeremovehook(ch); invokedestroyhook(ch); else text node removenode(ch.elm); removeandinvokeremovehook (vnode, rm) (isdef(rm) || isdef(vnode.data)) i; listeners="cbs.remove.length" + 1; (isdef(rm)) we have a recursively passed down rm callback increase the count rm.listeners directly removing listeners); invoke hooks on child component root isdef(i.data)) removeandinvokeremovehook(i, rm); cbs.remove.length; cbs.remove[i](vnode, i(vnode, rm(); removenode(vnode.elm); updatechildren oldch, newch, removeonly) oldstartidx="0;" newstartidx="0;" oldendidx="oldCh.length" - oldstartvnode="oldCh[0];" oldendvnode="oldCh[oldEndIdx];" newendidx="newCh.length" newstartvnode="newCh[0];" newendvnode="newCh[newEndIdx];" oldkeytoidx, idxinold, vnodetomove, refelm; removeonly is special flag used only by <transition-group>
       // to ensure removed elements stay in correct relative positions
       // during leaving transitions
       var canMove = !removeOnly;
@@ -6140,51 +5971,7 @@
         checkDuplicateKeys(newCh);
       }
 
-      while (oldStartIdx <= oldEndIdx && newStartIdx <= newEndIdx) {
-        if (isUndef(oldStartVnode)) {
-          oldStartVnode = oldCh[++oldStartIdx]; // Vnode has been moved left
-        } else if (isUndef(oldEndVnode)) {
-          oldEndVnode = oldCh[--oldEndIdx];
-        } else if (sameVnode(oldStartVnode, newStartVnode)) {
-          patchVnode(oldStartVnode, newStartVnode, insertedVnodeQueue, newCh, newStartIdx);
-          oldStartVnode = oldCh[++oldStartIdx];
-          newStartVnode = newCh[++newStartIdx];
-        } else if (sameVnode(oldEndVnode, newEndVnode)) {
-          patchVnode(oldEndVnode, newEndVnode, insertedVnodeQueue, newCh, newEndIdx);
-          oldEndVnode = oldCh[--oldEndIdx];
-          newEndVnode = newCh[--newEndIdx];
-        } else if (sameVnode(oldStartVnode, newEndVnode)) { // Vnode moved right
-          patchVnode(oldStartVnode, newEndVnode, insertedVnodeQueue, newCh, newEndIdx);
-          canMove && nodeOps.insertBefore(parentElm, oldStartVnode.elm, nodeOps.nextSibling(oldEndVnode.elm));
-          oldStartVnode = oldCh[++oldStartIdx];
-          newEndVnode = newCh[--newEndIdx];
-        } else if (sameVnode(oldEndVnode, newStartVnode)) { // Vnode moved left
-          patchVnode(oldEndVnode, newStartVnode, insertedVnodeQueue, newCh, newStartIdx);
-          canMove && nodeOps.insertBefore(parentElm, oldEndVnode.elm, oldStartVnode.elm);
-          oldEndVnode = oldCh[--oldEndIdx];
-          newStartVnode = newCh[++newStartIdx];
-        } else {
-          if (isUndef(oldKeyToIdx)) { oldKeyToIdx = createKeyToOldIdx(oldCh, oldStartIdx, oldEndIdx); }
-          idxInOld = isDef(newStartVnode.key)
-            ? oldKeyToIdx[newStartVnode.key]
-            : findIdxInOld(newStartVnode, oldCh, oldStartIdx, oldEndIdx);
-          if (isUndef(idxInOld)) { // New element
-            createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm, false, newCh, newStartIdx);
-          } else {
-            vnodeToMove = oldCh[idxInOld];
-            if (sameVnode(vnodeToMove, newStartVnode)) {
-              patchVnode(vnodeToMove, newStartVnode, insertedVnodeQueue, newCh, newStartIdx);
-              oldCh[idxInOld] = undefined;
-              canMove && nodeOps.insertBefore(parentElm, vnodeToMove.elm, oldStartVnode.elm);
-            } else {
-              // same key but different element. treat as new element
-              createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm, false, newCh, newStartIdx);
-            }
-          }
-          newStartVnode = newCh[++newStartIdx];
-        }
-      }
-      if (oldStartIdx > oldEndIdx) {
+      while (oldStartIdx <= oldendidx && newstartidx <="newEndIdx)" { if (isundef(oldstartvnode)) oldstartvnode="oldCh[++oldStartIdx];" vnode has been moved left } else (isundef(oldendvnode)) oldendvnode="oldCh[--oldEndIdx];" (samevnode(oldstartvnode, newstartvnode)) patchvnode(oldstartvnode, newstartvnode, insertedvnodequeue, newch, newstartidx); newstartvnode="newCh[++newStartIdx];" (samevnode(oldendvnode, newendvnode)) patchvnode(oldendvnode, newendvnode, newendidx); newendvnode="newCh[--newEndIdx];" right canmove nodeops.insertbefore(parentelm, oldstartvnode.elm, nodeops.nextsibling(oldendvnode.elm)); oldendvnode.elm, oldstartvnode.elm); (isundef(oldkeytoidx)) oldkeytoidx="createKeyToOldIdx(oldCh," oldstartidx, oldendidx); idxinold="isDef(newStartVnode.key)" ? oldkeytoidx[newstartvnode.key] : findidxinold(newstartvnode, oldch, (isundef(idxinold)) new element createelm(newstartvnode, parentelm, false, vnodetomove="oldCh[idxInOld];" (samevnode(vnodetomove, patchvnode(vnodetomove, oldch[idxinold]="undefined;" vnodetomove.elm, same key but different element. treat as (oldstartidx> oldEndIdx) {
         refElm = isUndef(newCh[newEndIdx + 1]) ? null : newCh[newEndIdx + 1].elm;
         addVnodes(parentElm, refElm, newCh, newStartIdx, newEndIdx, insertedVnodeQueue);
       } else if (newStartIdx > newEndIdx) {
@@ -7283,7 +7070,7 @@
       // value will throw an error.
       if (tag === 'input' && type === 'file') {
         warn$1(
-          "<" + (el.tag) + " v-model=\"" + value + "\" type=\"file\">:\n" +
+          "<" + (el.tag) " v-model="\""" value "\" type="\"file\"">:\n" +
           "File inputs are read only. Use a v-on:change listener instead.",
           el.rawAttrsMap['v-model']
         );
@@ -7308,7 +7095,7 @@
       return false
     } else {
       warn$1(
-        "<" + (el.tag) + " v-model=\"" + value + "\">: " +
+        "<" + (el.tag) " v-model="\""" value "\">: " +
         "v-model is not supported on this element type. " +
         'If you are working with contenteditable, it\'s recommended to ' +
         'wrap a library dedicated for that purpose inside a custom component.',
@@ -7344,8 +7131,7 @@
       'if(Array.isArray($$a)){' +
         "var $$v=" + (number ? '_n(' + valueBinding + ')' : valueBinding) + "," +
             '$$i=_i($$a,$$v);' +
-        "if($$el.checked){$$i<0&&(" + (genAssignmentCode(value, '$$a.concat([$$v])')) + ")}" +
-        "else{$$i>-1&&(" + (genAssignmentCode(value, '$$a.slice(0,$$i).concat($$a.slice($$i+1))')) + ")}" +
+        "if($$el.checked){$$i<0&&(" + (genassignmentcode(value, '$$a.concat([$$v])')) ")}" "else{$$i>-1&&(" + (genAssignmentCode(value, '$$a.slice(0,$$i).concat($$a.slice($$i+1))')) + ")}" +
       "}else{" + (genAssignmentCode(value, '$$c')) + "}",
       null, true
     );
@@ -7468,34 +7254,7 @@
     }
   }
 
-  // #9446: Firefox <= 53 (in particular, ESR 52) has incorrect Event.timeStamp
-  // implementation and does not fire microtasks in between event propagation, so
-  // safe to exclude.
-  var useMicrotaskFix = isUsingMicroTask && !(isFF && Number(isFF[1]) <= 53);
-
-  function add$1 (
-    name,
-    handler,
-    capture,
-    passive
-  ) {
-    // async edge case #6566: inner click event triggers patch, event handler
-    // attached to outer element during patch, and triggered again. This
-    // happens because browsers fire microtask ticks between event propagation.
-    // the solution is simple: we save the timestamp when a handler is attached,
-    // and the handler would only fire if the event passed to it was fired
-    // AFTER it was attached.
-    if (useMicrotaskFix) {
-      var attachedTimestamp = currentFlushTimestamp;
-      var original = handler;
-      handler = original._wrapper = function (e) {
-        if (
-          // no bubbling, should always fire.
-          // this is just a safety net in case event.timeStamp is unreliable in
-          // certain weird environments...
-          e.target === e.currentTarget ||
-          // event is fired after handler attachment
-          e.timeStamp >= attachedTimestamp ||
+  // #9446: Firefox <= 53 (in particular, esr 52) has incorrect event.timestamp implementation and does not fire microtasks in between event propagation, so safe to exclude. var usemicrotaskfix="isUsingMicroTask" && !(isff number(isff[1]) <="53);" function add$1 ( name, handler, capture, passive ) { async edge case #6566: inner click triggers patch, handler attached outer element during triggered again. this happens because browsers microtask ticks propagation. the solution is simple: we save timestamp when a attached, would only if passed it was fired after attached. (usemicrotaskfix) attachedtimestamp="currentFlushTimestamp;" original="handler;" = (e) no bubbling, should always fire. just safety net unreliable certain weird environments... e.target="==" e.currenttarget || attachment e.timestamp>= attachedTimestamp ||
           // #9462 bail for iOS 9 bug: event.timeStamp is 0 after history.pushState
           e.timeStamp === 0 ||
           // #9448 bail if event is fired in another document in a multi-page
@@ -7576,26 +7335,7 @@
       if (key === 'textContent' || key === 'innerHTML') {
         if (vnode.children) { vnode.children.length = 0; }
         if (cur === oldProps[key]) { continue }
-        // #6601 work around Chrome version <= 55 bug where single textNode
-        // replaced by innerHTML/textContent retains its parentNode property
-        if (elm.childNodes.length === 1) {
-          elm.removeChild(elm.childNodes[0]);
-        }
-      }
-
-      if (key === 'value' && elm.tagName !== 'PROGRESS') {
-        // store value as _value as well since
-        // non-string values will be stringified
-        elm._value = cur;
-        // avoid resetting cursor position when value is the same
-        var strCur = isUndef(cur) ? '' : String(cur);
-        if (shouldUpdateValue(elm, strCur)) {
-          elm.value = strCur;
-        }
-      } else if (key === 'innerHTML' && isSVG(elm.tagName) && isUndef(elm.innerHTML)) {
-        // IE doesn't support innerHTML for SVG elements
-        svgContainer = svgContainer || document.createElement('div');
-        svgContainer.innerHTML = "<svg>" + cur + "</svg>";
+        // #6601 work around Chrome version <= 55 bug where single textnode replaced by innerhtml textcontent retains its parentnode property if (elm.childnodes.length="==" 1) { elm.removechild(elm.childnodes[0]); } (key="==" 'value' && elm.tagname !="=" 'progress') store value as _value well since non-string values will be stringified elm._value="cur;" avoid resetting cursor position when is the same var strcur="isUndef(cur)" ? '' : string(cur); (shouldupdatevalue(elm, strcur)) elm.value="strCur;" else 'innerhtml' issvg(elm.tagname) isundef(elm.innerhtml)) ie doesn't support for svg elements svgcontainer="svgContainer" || document.createelement('div'); svgcontainer.innerhtml="<svg>" + cur "<>";
         var svg = svgContainer.firstChild;
         while (elm.firstChild) {
           elm.removeChild(elm.firstChild);
@@ -8490,7 +8230,7 @@
     var isMultiple = el.multiple;
     if (isMultiple && !Array.isArray(value)) {
       warn(
-        "<select multiple v-model=\"" + (binding.expression) + "\"> " +
+        "<select multiple v-model="\""" + (binding.expression) "\"> " +
         "expects an Array value for its binding, but got " + (Object.prototype.toString.call(value).slice(8, -1)),
         vm
       );
@@ -8852,7 +8592,7 @@
           } else {
             var opts = c.componentOptions;
             var name = opts ? (opts.Ctor.options.name || opts.tag || '') : c.tag;
-            warn(("<transition-group> children must be keyed: <" + name + ">"));
+            warn(("<transition-group> children must be keyed: <" + name ">"));
           }
         }
       }
@@ -9088,7 +8828,7 @@
           "class=\"" + staticClass + "\": " +
           'Interpolation inside attributes has been removed. ' +
           'Use v-bind or the colon shorthand instead. For example, ' +
-          'instead of <div class="{{ val }}">, use <div :class="val">.',
+          'instead of <div class>, use <div :class="val">.',
           el.rawAttrsMap['class']
         );
       }
@@ -9133,7 +8873,7 @@
             "style=\"" + staticStyle + "\": " +
             'Interpolation inside attributes has been removed. ' +
             'Use v-bind or the colon shorthand instead. For example, ' +
-            'instead of <div style="{{ val }}">, use <div :style="val">.',
+            'instead of <div style>, use <div :style="val">.',
             el.rawAttrsMap['style']
           );
         }
@@ -9208,9 +8948,8 @@
   var dynamicArgAttribute = /^\s*((?:v-[\w-]+:|@|:|#)\[[^=]+\][^\s"'<>\/=]*)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/;
   var ncname = "[a-zA-Z_][\\-\\.0-9_a-zA-Z" + unicodeLetters + "]*";
   var qnameCapture = "((?:" + ncname + "\\:)?" + ncname + ")";
-  var startTagOpen = new RegExp(("^<" + qnameCapture));
-  var startTagClose = /^\s*(\/?)>/;
-  var endTag = new RegExp(("^<\\/" + qnameCapture + "[^>]*>"));
+  var startTagOpen = new RegExp(("^<" + qnamecapture)); var starttagclose="/^\s*(\/?)">/;
+  var endTag = new RegExp(("^<\\ " + qnamecapture "[^>]*>"));
   var doctype = /^<!DOCTYPE [^>]+>/i;
   // #7298: escape - to avoid being pased as HTML comment when inlined in page
   var comment = /^<!\--/;
@@ -9252,11 +8991,7 @@
       last = html;
       // Make sure we're not in a plaintext content element like script/style
       if (!lastTag || !isPlainTextElement(lastTag)) {
-        var textEnd = html.indexOf('<');
-        if (textEnd === 0) {
-          // Comment:
-          if (comment.test(html)) {
-            var commentEnd = html.indexOf('-->');
+        var textEnd = html.indexOf('<'); if (textend="==" 0) { comment: (comment.test(html)) var commentend="html.indexOf('--">');
 
             if (commentEnd >= 0) {
               if (options.shouldKeepComment) {
@@ -9314,29 +9049,7 @@
             !conditionalComment.test(rest)
           ) {
             // < in plain text, be forgiving and treat it as text
-            next = rest.indexOf('<', 1);
-            if (next < 0) { break }
-            textEnd += next;
-            rest = html.slice(textEnd);
-          }
-          text = html.substring(0, textEnd);
-        }
-
-        if (textEnd < 0) {
-          text = html;
-        }
-
-        if (text) {
-          advance(text.length);
-        }
-
-        if (options.chars && text) {
-          options.chars(text, index - text.length, index);
-        }
-      } else {
-        var endTagLength = 0;
-        var stackedTag = lastTag.toLowerCase();
-        var reStackedTag = reCache[stackedTag] || (reCache[stackedTag] = new RegExp('([\\s\\S]*?)(</' + stackedTag + '[^>]*>)', 'i'));
+            next = rest.indexOf('<', 1); if (next < 0) { break } textend +="next;" rest="html.slice(textEnd);" text="html.substring(0," textend); (textend (text) advance(text.length); (options.chars && text) options.chars(text, index - text.length, index); else var endtaglength="0;" stackedtag="lastTag.toLowerCase();" restackedtag="reCache[stackedTag]" || (recache[stackedtag]="new" regexp('([\\s\\s]*?)(< ' '[^>]*>)', 'i'));
         var rest$1 = html.replace(reStackedTag, function (all, text, endTag) {
           endTagLength = endTag.length;
           if (!isPlainTextElement(stackedTag) && stackedTag !== 'noscript') {
@@ -9467,7 +9180,7 @@
             options.warn
           ) {
             options.warn(
-              ("tag <" + (stack[i].tag) + "> has no matching end tag."),
+              ("tag <" + (stack[i].tag) "> has no matching end tag."),
               { start: stack[i].start }
             );
           }
@@ -9659,7 +9372,7 @@
     function checkRootConstraints (el) {
       if (el.tag === 'slot' || el.tag === 'template') {
         warnOnce(
-          "Cannot use <" + (el.tag) + "> as component root element because it may " +
+          "Cannot use <" + (el.tag) "> as component root element because it may " +
           'contain multiple nodes.',
           { start: el.start }
         );
@@ -9710,7 +9423,7 @@
             if (invalidAttributeRE.test(attr.name)) {
               warn$2(
                 "Invalid dynamic argument expression: attribute names cannot contain " +
-                "spaces, quotes, <, >, / or =.",
+                "spaces, quotes, <,>, / or =.",
                 {
                   start: attr.start + attr.name.indexOf("["),
                   end: attr.start + attr.name.length
@@ -9725,7 +9438,7 @@
           warn$2(
             'Templates should only be responsible for mapping the state to the ' +
             'UI. Avoid placing tags with side-effects in your templates, such as ' +
-            "<" + tag + ">" + ', as they will not be parsed.',
+            "<" + tag ">" + ', as they will not be parsed.',
             { start: element.start }
           );
         }
@@ -10022,7 +9735,7 @@
     } else {
       warn$2(
         "v-" + (el.elseif ? ('else-if="' + el.elseif + '"') : 'else') + " " +
-        "used on element <" + (el.tag) + "> without corresponding v-if.",
+        "used on element <" + (el.tag) "> without corresponding v-if.",
         el.rawAttrsMap[el.elseif ? 'v-else-if' : 'v-else']
       );
     }
@@ -10082,7 +9795,7 @@
       /* istanbul ignore if */
       if (el.attrsMap['v-for']) {
         warn$2(
-          "Ambiguous combined usage of slot-scope and v-for on <" + (el.tag) + "> " +
+          "Ambiguous combined usage of slot-scope and v-for on <" + (el.tag) "> " +
           "(v-for takes higher priority). Use a wrapper <template> for the " +
           "scoped slot to make it clearer.",
           el.rawAttrsMap['slot-scope'],
@@ -10200,7 +9913,7 @@
       : { name: ("\"" + name + "\""), dynamic: false }
   }
 
-  // handle <slot/> outlets
+  // handle <slot> outlets
   function processSlotOutlet (el) {
     if (el.tag === 'slot') {
       el.slotName = getBindingAttr(el, 'name');
@@ -10341,7 +10054,7 @@
               name + "=\"" + value + "\": " +
               'Interpolation inside attributes has been removed. ' +
               'Use v-bind or the colon shorthand instead. For example, ' +
-              'instead of <div id="{{ val }}">, use <div :id="val">.',
+              'instead of <div id>, use <div :id="val">.',
               list[i]
             );
           }
@@ -10427,7 +10140,7 @@
     while (_el) {
       if (_el.for && _el.alias === value) {
         warn$2(
-          "<" + (el.tag) + " v-model=\"" + value + "\">: " +
+          "<" + (el.tag) " v-model="\""" value "\">: " +
           "You are binding v-model directly to a v-for iteration alias. " +
           "This will not be able to modify the v-for source array because " +
           "writing to the alias is like modifying a function local variable. " +
@@ -11038,7 +10751,7 @@
       !el.key
     ) {
       state.warn(
-        "<" + (el.tag) + " v-for=\"" + alias + " in " + exp + "\">: component lists rendered with " +
+        "<" + (el.tag) " v-for="\""" alias in exp "\">: component lists rendered with " +
         "v-for should have explicit keys. " +
         "See https://vuejs.org/guide/list.html#key for more info.",
         el.rawAttrsMap['v-for'],
@@ -11546,7 +11259,7 @@
     for (var i = 0; i < lines.length; i++) {
       count += lines[i].length + 1;
       if (count >= start) {
-        for (var j = i - range; j <= i + range || end > count; j++) {
+        for (var j = i - range; j <= i + range || end> count; j++) {
           if (j < 0 || j >= lines.length) { continue }
           res.push(("" + (j + 1) + (repeat$1(" ", 3 - String(j + 1).length)) + "|  " + (lines[j])));
           var lineLength = lines[j].length;
@@ -11575,232 +11288,7 @@
       while (true) { // eslint-disable-line
         if (n & 1) { result += str; }
         n >>>= 1;
-        if (n <= 0) { break }
-        str += str;
-      }
-    }
-    return result
-  }
-
-  /*  */
-
-
-
-  function createFunction (code, errors) {
-    try {
-      return new Function(code)
-    } catch (err) {
-      errors.push({ err: err, code: code });
-      return noop
-    }
-  }
-
-  function createCompileToFunctionFn (compile) {
-    var cache = Object.create(null);
-
-    return function compileToFunctions (
-      template,
-      options,
-      vm
-    ) {
-      options = extend({}, options);
-      var warn$$1 = options.warn || warn;
-      delete options.warn;
-
-      /* istanbul ignore if */
-      {
-        // detect possible CSP restriction
-        try {
-          new Function('return 1');
-        } catch (e) {
-          if (e.toString().match(/unsafe-eval|CSP/)) {
-            warn$$1(
-              'It seems you are using the standalone build of Vue.js in an ' +
-              'environment with Content Security Policy that prohibits unsafe-eval. ' +
-              'The template compiler cannot work in this environment. Consider ' +
-              'relaxing the policy to allow unsafe-eval or pre-compiling your ' +
-              'templates into render functions.'
-            );
-          }
-        }
-      }
-
-      // check cache
-      var key = options.delimiters
-        ? String(options.delimiters) + template
-        : template;
-      if (cache[key]) {
-        return cache[key]
-      }
-
-      // compile
-      var compiled = compile(template, options);
-
-      // check compilation errors/tips
-      {
-        if (compiled.errors && compiled.errors.length) {
-          if (options.outputSourceRange) {
-            compiled.errors.forEach(function (e) {
-              warn$$1(
-                "Error compiling template:\n\n" + (e.msg) + "\n\n" +
-                generateCodeFrame(template, e.start, e.end),
-                vm
-              );
-            });
-          } else {
-            warn$$1(
-              "Error compiling template:\n\n" + template + "\n\n" +
-              compiled.errors.map(function (e) { return ("- " + e); }).join('\n') + '\n',
-              vm
-            );
-          }
-        }
-        if (compiled.tips && compiled.tips.length) {
-          if (options.outputSourceRange) {
-            compiled.tips.forEach(function (e) { return tip(e.msg, vm); });
-          } else {
-            compiled.tips.forEach(function (msg) { return tip(msg, vm); });
-          }
-        }
-      }
-
-      // turn code into functions
-      var res = {};
-      var fnGenErrors = [];
-      res.render = createFunction(compiled.render, fnGenErrors);
-      res.staticRenderFns = compiled.staticRenderFns.map(function (code) {
-        return createFunction(code, fnGenErrors)
-      });
-
-      // check function generation errors.
-      // this should only happen if there is a bug in the compiler itself.
-      // mostly for codegen development use
-      /* istanbul ignore if */
-      {
-        if ((!compiled.errors || !compiled.errors.length) && fnGenErrors.length) {
-          warn$$1(
-            "Failed to generate render function:\n\n" +
-            fnGenErrors.map(function (ref) {
-              var err = ref.err;
-              var code = ref.code;
-
-              return ((err.toString()) + " in\n\n" + code + "\n");
-          }).join('\n'),
-            vm
-          );
-        }
-      }
-
-      return (cache[key] = res)
-    }
-  }
-
-  /*  */
-
-  function createCompilerCreator (baseCompile) {
-    return function createCompiler (baseOptions) {
-      function compile (
-        template,
-        options
-      ) {
-        var finalOptions = Object.create(baseOptions);
-        var errors = [];
-        var tips = [];
-
-        var warn = function (msg, range, tip) {
-          (tip ? tips : errors).push(msg);
-        };
-
-        if (options) {
-          if (options.outputSourceRange) {
-            // $flow-disable-line
-            var leadingSpaceLength = template.match(/^\s*/)[0].length;
-
-            warn = function (msg, range, tip) {
-              var data = { msg: msg };
-              if (range) {
-                if (range.start != null) {
-                  data.start = range.start + leadingSpaceLength;
-                }
-                if (range.end != null) {
-                  data.end = range.end + leadingSpaceLength;
-                }
-              }
-              (tip ? tips : errors).push(data);
-            };
-          }
-          // merge custom modules
-          if (options.modules) {
-            finalOptions.modules =
-              (baseOptions.modules || []).concat(options.modules);
-          }
-          // merge custom directives
-          if (options.directives) {
-            finalOptions.directives = extend(
-              Object.create(baseOptions.directives || null),
-              options.directives
-            );
-          }
-          // copy other options
-          for (var key in options) {
-            if (key !== 'modules' && key !== 'directives') {
-              finalOptions[key] = options[key];
-            }
-          }
-        }
-
-        finalOptions.warn = warn;
-
-        var compiled = baseCompile(template.trim(), finalOptions);
-        {
-          detectErrors(compiled.ast, warn);
-        }
-        compiled.errors = errors;
-        compiled.tips = tips;
-        return compiled
-      }
-
-      return {
-        compile: compile,
-        compileToFunctions: createCompileToFunctionFn(compile)
-      }
-    }
-  }
-
-  /*  */
-
-  // `createCompilerCreator` allows creating compilers that use alternative
-  // parser/optimizer/codegen, e.g the SSR optimizing compiler.
-  // Here we just export a default compiler using the default parts.
-  var createCompiler = createCompilerCreator(function baseCompile (
-    template,
-    options
-  ) {
-    var ast = parse(template.trim(), options);
-    if (options.optimize !== false) {
-      optimize(ast, options);
-    }
-    var code = generate(ast, options);
-    return {
-      ast: ast,
-      render: code.render,
-      staticRenderFns: code.staticRenderFns
-    }
-  });
-
-  /*  */
-
-  var ref$1 = createCompiler(baseOptions);
-  var compile = ref$1.compile;
-  var compileToFunctions = ref$1.compileToFunctions;
-
-  /*  */
-
-  // check whether current browser encodes a char inside attribute values
-  var div;
-  function getShouldDecode (href) {
-    div = div || document.createElement('div');
-    div.innerHTML = href ? "<a href=\"\n\"/>" : "<div a=\"\n\"/>";
+        if (n <= 0) { break } str +="str;" return result * function createfunction (code, errors) try new function(code) catch (err) errors.push({ err: err, code: code }); noop createcompiletofunctionfn (compile) var cache="Object.create(null);" compiletofunctions ( template, options, vm ) options="extend({}," options); warn$$1="options.warn" || warn; delete options.warn; istanbul ignore if detect possible csp restriction function('return 1'); (e) (e.tostring().match( unsafe-eval|csp )) warn$$1( 'it seems you are using the standalone build of vue.js in an ' 'environment with content security policy that prohibits unsafe-eval. 'the template compiler cannot work this environment. consider 'relaxing to allow unsafe-eval or pre-compiling your 'templates into render functions.' ); check key="options.delimiters" ? string(options.delimiters) : template; (cache[key]) cache[key] compile compiled="compile(template," compilation errors tips (compiled.errors && compiled.errors.length) (options.outputsourcerange) compiled.errors.foreach(function "error compiling template:\n\n" (e.msg) "\n\n" generatecodeframe(template, e.start, e.end), else compiled.errors.map(function ("- " e); }).join('\n') '\n', (compiled.tips compiled.tips.length) compiled.tips.foreach(function tip(e.msg, vm); (msg) tip(msg, turn functions res="{};" fngenerrors="[];" res.render="createFunction(compiled.render," fngenerrors); res.staticrenderfns="compiled.staticRenderFns.map(function" (code) createfunction(code, fngenerrors) generation errors. should only happen there is a bug itself. mostly for codegen development use ((!compiled.errors !compiled.errors.length) fngenerrors.length) "failed generate function:\n\n" fngenerrors.map(function (ref) err="ref.err;" ((err.tostring()) in\n\n" "\n"); }).join('\n'), (cache[key]="res)" createcompilercreator (basecompile) createcompiler (baseoptions) finaloptions="Object.create(baseOptions);" warn="function" (msg, range, tip) (tip errors).push(msg); }; (options) $flow-disable-line leadingspacelength="template.match(/^\s*/)[0].length;" data="{" msg: msg (range) (range.start !="null)" data.start="range.start" leadingspacelength; (range.end data.end="range.end" errors).push(data); merge custom modules (options.modules) finaloptions.modules="(baseOptions.modules" []).concat(options.modules); directives (options.directives) finaloptions.directives="extend(" object.create(baseoptions.directives null), options.directives copy other (var options) (key 'modules' 'directives') finaloptions[key]="options[key];" finaloptions.warn="warn;" finaloptions); detecterrors(compiled.ast, warn); compiled.errors="errors;" compiled.tips="tips;" compile: compile, compiletofunctions: createcompiletofunctionfn(compile) `createcompilercreator` allows creating compilers alternative parser optimizer codegen, e.g ssr optimizing compiler. here we just export default parts. basecompile ast="parse(template.trim()," (options.optimize false) optimize(ast, ast: ast, render: code.render, staticrenderfns: code.staticrenderfns ref$1="createCompiler(baseOptions);" whether current browser encodes char inside attribute values div; getshoulddecode (href) div="div" document.createelement('div'); div.innerhtml="href" "<a href="\"\n\"/">" : "<div a="\"\n\"/">";
     return div.innerHTML.indexOf('&#10;') > 0
   }
 
@@ -11905,3 +11393,4 @@
   return Vue;
 
 }));
+</body></html></div></=></=></"></"></div></div></slot></slot></template></template></template></template></template></"></template></div></template></"></transition-group></template></"></,></"></"></',></');></\\></"></div></div></div></div></"></transition-group></transition></transition-group></transition></keep-alive></select></transition></transition></transition></transition></transition></progress></=></=></0&&("></"></"></textarea></iframe></tbody></p></=></=></=></slot></slot></template></vnode></anonymous></"></root>
