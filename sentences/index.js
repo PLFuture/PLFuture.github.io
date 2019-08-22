@@ -12,8 +12,8 @@ var app = new Vue({
 			<div class="section">
 				<div class="wrapper">
 					<div class="title-wrapper">
-						<div class="title"></div>
-						<div class="content">undefined月undefined日</div>
+						<div class="title">{{currentDate}}</div>
+						<div class="content">{{Map[month]+'月'+Map[day]+'日'}}</div>
 						<div class="uparrow">
 							<a href="javascript: $.fn.fullpage.moveSectionDown();" target="_blank" rel="noopener">
 								<i class="fa fa-angle-double-up fa-2x"></i>
@@ -25,17 +25,17 @@ var app = new Vue({
 			<div class="section" v-for="(item,index) in sentencesContent" :key="index">
 				<div class="wrapper">
 					<div class="sentence-wrapper">
-						<div class="sentence" v-if="item.sentence"></div>
+						<div class="sentence" v-if="item.sentence">{{item.sentence}}</div>
 						<div class="sentence" v-if="item.poem" v-for="(nasp,naspIndex) in poemArr[index]" :key="naspIndex">
-							<span class="poemSentence"></span>
+							<span class="poemSentence">{{nasp}}</span>
 							<br>
 						</div>
 						<br>
 						<br v-if="item.author">
-						<div class="author" v-if="item.author">--  --</div>
+						<div class="author" v-if="item.author">-- {{item.author}} --</div>
 						<br>
 						<br v-if="item.time">
-						<div class="time" v-if="item.time"></div>
+						<div class="time" v-if="item.time">{{item.time}}</div>
 					</div>
 				</div>
 			</div>
