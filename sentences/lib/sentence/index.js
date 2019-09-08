@@ -57,7 +57,7 @@ const arr = [
     author: '尼采'
   },
   {
-    poem: 'Perhaps unhappiness can stem from /having only one perspective to play with.',
+    poem: 'Perhaps unhappiness can stem from /having only one perspective to play with./也许不快乐的源泉正来自我们用单一的视角看世界。',
     author: '阿兰·德波顿'
   },
   {
